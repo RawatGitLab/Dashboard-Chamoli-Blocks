@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chamoli Block Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="panel" aria-label="Dashboard panel">
+        <header class="head">
+          <h1>Chamoli district</h1>
+          <p class="sub">Census indicators for the 9 development blocks</p>
+        </header>
+
+        <section class="kpis" id="kpis" aria-label="District totals"></section>
+
+        <section class="block">
+          <label class="field" for="metric">Colour the map by</label>
+          <select id="metric"></select>
+          <div class="chart-wrap"><canvas id="chart" aria-label="Blocks ranked by selected indicator"></canvas></div>
+        </section>
+
+        <section class="block" id="profile" aria-live="polite"></section>
+
+        <section class="block">
+          <h2>All blocks</h2>
+          <div class="table-scroll">
+            <table id="table">
+              <thead>
+                <tr><th>Block</th><th class="num">Population</th><th class="num">Literacy</th><th class="num">Sex ratio</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </aside>
+
+      <main class="map-area">
+        <div id="map" role="application" aria-label="Chamoli block map"></div>
+        <div class="legend" id="legend"></div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
